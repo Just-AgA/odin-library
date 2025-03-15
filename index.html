@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Library</title>
+</head>
+<body>
+    <div class="container"></div>
+    <dialog>
+        
+        <form method="dialog">
+            <h3>Please enter the following information about the book that you want to add:</h3>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author">
+
+            <label for="pages">Pages:</label>
+            <input type="number" id="pages" name="pages">
+
+            <radioGroup>
+                <label for="read">Read:</label>
+                <input type="radio" id="read" name="read" value="Read" checked>
+
+                <label for="not-read">Not read</label>
+                <input type="radio" id="not-read" name="read" value="Not read yet">
+            </radioGroup>
+
+            <button formmethod="dialog" id="form-submit">Submit</button>
+        </form>
+        <button class="close-modal" autofocus>Close</button>
+    </dialog>
+    <button class="add-book">Add new book</button>
+    <script src="script.js"></script>
+</body>
+</html>
