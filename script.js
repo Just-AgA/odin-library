@@ -7,3 +7,14 @@ function Book(title, author, pages, read="Not read yet"){
     this.read = read;
 }
 
+// Adding method to toggle the read status
+Book.prototype.toggleStatus = function(bookId) {
+    const book = myLibrary.find(book => book.id === bookId);
+
+    if (book) {
+        book.read = (book.read === "Read") ? "Not read yet" : "Read";
+    }
+
+    renderLibrary();
+}
+
