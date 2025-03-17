@@ -18,3 +18,11 @@ Book.prototype.toggleStatus = function(bookId) {
     renderLibrary();
 }
 
+// Create array to hold all the books
+const myLibrary = []
+
+// Create function that creates new books and adds them to the array myLibrary
+function addBookToLibrary(title, author,pages,read){
+    myLibrary.push(new Book(title, author, pages, read));
+}
+
