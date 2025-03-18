@@ -26,3 +26,20 @@ function addBookToLibrary(title, author,pages,read){
     myLibrary.push(new Book(title, author, pages, read));
 }
 
+addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295);
+addBookToLibrary("Harry Potter", "J.Rowling", 358, "Read");
+addBookToLibrary("Harry Potter", "J.Rowling", 358, "Read");
+
+//Create functionality to add new books to the array
+const dialog = document.querySelector("dialog");
+const addBook = document.querySelector(".add-book");
+
+addBook.addEventListener("click", ()=>{
+    dialog.showModal();
+})
+
+const closeModal = document.querySelector(".close-modal");
+closeModal.addEventListener("click", ()=> {
+    dialog.close();
+})
+
