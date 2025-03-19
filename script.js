@@ -43,3 +43,30 @@ closeModal.addEventListener("click", ()=> {
     dialog.close();
 })
 
+const submitForm = document.querySelector("#form-submit")
+
+submitForm.addEventListener("click", (event)=> {
+    event.preventDefault();
+
+    const titleInput = document.querySelector("#title")
+    const authorInput = document.querySelector("#author");
+    const pagesInput = document.querySelector("#pages");
+    const readInput = document.querySelector('input[name="read"]:checked');
+
+    const title = titleInput.value;
+    const author = authorInput.value;
+    const pages = pagesInput.value;
+    const read = readInput.value;
+    
+    addBookToLibrary(title, author, pages, read);
+
+    dialog.close();
+    
+    renderLibrary();
+
+    titleInput.value = "";
+    authorInput.value = "";
+    pagesInput.value = "";
+    readInput.value = "";
+})
+
