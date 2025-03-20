@@ -70,3 +70,37 @@ submitForm.addEventListener("click", (event)=> {
     readInput.value = "";
 })
 
+// Function to render all books in the library to the page
+function renderLibrary() {
+    const container = document.querySelector(".container");
+    container.innerHTML = "";
+
+    myLibrary.forEach(function (book) {
+        const bookDiv = document.createElement('div');
+        bookDiv.classList.add('book');
+
+        bookDiv.innerHTML = `
+          <h2>Title: ${book.title}</h2>
+          <h3>Author: ${book.author}</h3>
+          <h3>Pages: ${book.pages}</h3>
+          <h3>Status: ${book.read}</h3>
+          <button class="delete-btn">Delete</button>
+          <button class="toggle-status-btn">Toggle Read Status</button>
+        `;
+
+        // Toggle read status
+        const toggle = bookDiv.querySelector(".toggle-status-btn");
+        toggle.addEventListener("click", ()=> {
+            book.toggleStatus(book.id);
+        })
+
+        // Deletes books from the list
+        const deleteBtn = bookDiv.querySelector('.delete-btn');
+        deleteBtn.addEventListener('click', () => {
+            deleteBook(book.id);
+          });
+
+        container.appendChild(bookDiv);
+    });
+  }
+
