@@ -104,3 +104,13 @@ function renderLibrary() {
     });
   }
 
+// Function to remove a particular book
+function deleteBook(bookId){
+    const index = myLibrary.findIndex(book => book.id === bookId);
+    if(index !== -1){
+        myLibrary.splice(index, 1);
+    }
+    renderLibrary();
+}
+
+renderLibrary();
